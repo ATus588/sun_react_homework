@@ -1,10 +1,12 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import '../../Css/customCheckbox.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCaretDown, faCaretUp } from '@fortawesome/free-solid-svg-icons'
 import Count from './Count'
 
-function SubCategory() {
+const categoriesAPI = "http://localhost:3000/categories?_embed=subCategories"
+
+function SubCategory({sub}) {
   const [checked, setChecked] = useState(false);
 
   return (
@@ -13,15 +15,15 @@ function SubCategory() {
         <input type="checkbox" name='subCategory' checked={checked} onChange={(e) => setChecked(e.target.checked)} />
         <span className="category__checkmark">
           {checked ? <FontAwesomeIcon icon={faCaretDown} /> : <FontAwesomeIcon icon={faCaretUp} />}
-          Sub Category name
-          <Count count={5} />
+          {sub.name}
+          <Count count={sub.quantity} />
         </span>
       </label>
     </li>
   )
 }
 
-function CategoryCheckbox() {
+function CategoryCheckbox({category}) {
   const [checked, setChecked] = useState(false);
 
   const onChange = (e) => {
@@ -34,24 +36,35 @@ function CategoryCheckbox() {
         <input type="checkbox" name='category' checked={checked} onChange={onChange} />
         <span className="category__checkmark">
           {checked ? <FontAwesomeIcon icon={faCaretDown} /> : <FontAwesomeIcon icon={faCaretUp} />}
-          Category name
-          <Count count={555} />
+          {category.name}
+          <Count count={category.quantity} />
         </span>
       </label>
       <ul className='list-unstyled p-1'>
-        {checked && <SubCategory />}
+        {checked && category.subCategories && category.subCategories.map(
+          (sub, index) => <SubCategory sub={sub} key={index} />
+        )}
       </ul>
     </li>
   )
 }
 
 function Category() {
+  const [categories, setCategories] = useState()
+
+  useEffect(() => {
+    fetch(categoriesAPI)
+      .then(response => response.json())
+      .then(data => setCategories(data))
+  }, [])
+
   return (
     <div className='filter__section__container'>
       <div className="filter__section__title">Category</div>
       <ul className='list-unstyled p-0'>
-        <CategoryCheckbox />
-        <CategoryCheckbox />
+        {categories && categories.map(
+          (category, index) => <CategoryCheckbox category={category} key={index} />
+        )}
       </ul>
     </div>
   )

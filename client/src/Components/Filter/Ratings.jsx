@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import Count from './Count'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faStar } from '@fortawesome/free-solid-svg-icons'
@@ -15,15 +15,24 @@ function Star({ rating }) {
   )
 }
 
+const ratingsAPI = 'http://localhost:3000/ratings'
+
 function Ratings() {
+  const [ratings, setRatings] = useState()
+
+  useEffect(() => {
+    fetch(ratingsAPI)
+      .then(response => response.json())
+      .then(data => setRatings(data))
+  }, [])
+
   return (
     <div className='filter__section__container'>
       <div className="filter__section__title">Ratings</div>
       <ul className='list-unstyled p-0'>
-        <li className='flex__align__middle mb-3'><Star rating={4} /><Count count={555} /></li>
-        <li className='flex__align__middle mb-3'><Star rating={3} /><Count count={555} /></li>
-        <li className='flex__align__middle mb-3'><Star rating={2} /><Count count={555} /></li>
-        <li className='flex__align__middle mb-3'><Star rating={1} /><Count count={555} /></li>
+        {ratings && ratings.map(
+          (rating, index) => <li key={index} className='flex__align__middle mb-3'><Star rating={rating.star} /><Count count={rating.count} /></li>
+          )}
       </ul>
     </div>
   )

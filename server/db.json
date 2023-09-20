@@ -64,22 +64,27 @@
     "brands": [
         {
             "id": 1,
+            "quantity": 555,
             "name": "Dell"
         },
         {
             "id": 2,
+            "quantity": 5565,
             "name": "Microsoft"
         },
         {
             "id": 3,
+            "quantity": 44,
             "name": "Điện cơ"
         },
         {
             "id": 4,
+            "quantity": 1,
             "name": "Razer"
         },
         {
             "id": 5,
+            "quantity": 555,
             "name": "No brand"
         }
     ],

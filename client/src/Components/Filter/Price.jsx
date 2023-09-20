@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Slider from '@mui/material/Slider';
 
 const style = {
@@ -36,15 +36,27 @@ function valueLabel(value) {
   return <div><span style={{ color: 'var(--gold_yellow)' }}>$</span> {value}</div>
 }
 
+const minAPI = 'http://localhost:3000/products?_page=1&_limit=1&_sort=price&_order=asc'
+const maxAPI = 'http://localhost:3000/products?_page=1&_limit=1&_sort=price&_order=desc'
+
 function Price() {
-  const minPrice = 1
-  const maxPrice = 500
+  const [minPrice, setMinPrice] = useState(0);
+  const [maxPrice, setMaxPrice] = useState(9999);
 
   const [value, setValue] = useState([minPrice, maxPrice]);
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
+
+  useEffect(() => {
+    fetch(minAPI)
+      .then(response => response.json())
+      .then(data => setMinPrice(data[0].price))
+    fetch(maxAPI)
+      .then(response => response.json())
+      .then(data => setMaxPrice(data[0].price))
+  }, [])
 
   return (
     <div className='filter__section__container'>
