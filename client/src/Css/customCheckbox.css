@@ -1,0 +1,168 @@
+/* Customize the label (the container) */
+.category__radio {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+    display: block;
+  position: relative;
+  cursor: pointer;
+  height: 35px;
+}
+
+/* Hide the browser's default checkbox */
+.category__radio input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.category__checkmark {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  font-size: 14px;
+}
+.category__checkmark svg {
+    margin-right: 10px;
+    color: var(--controller_grey)
+}
+
+/* style checked checkmark */
+.category__radio input:checked ~ .category__checkmark {
+  font-weight: bold;
+}
+
+/* The container */
+.brand__checkbox {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+    display: flex;
+    align-items: center;
+  position: relative;
+  padding-left: 35px;
+  cursor: pointer;
+    font-size: 14px;
+  margin: 20px 0;
+
+}
+
+/* Hide the browser's default checkbox */
+.brand__checkbox input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.brand__checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  background-color: #eee;
+}
+
+/* When the checkbox is checked, add background */
+.brand__checkbox input:checked ~ .brand__checkmark {
+  background-color: var(--gold_yellow);
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.brand__checkmark:after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  width: 5px;
+  height: 5px;
+  border-radius: 999px;
+  display: none;
+  background-color: white;
+}
+/* Show the checkmark when checked */
+.brand__checkbox input:checked ~ .brand__checkmark:after {
+  display: block;
+}
+
+/* toggle price */
+.freeship__switch {
+  position: relative;
+  display: flex;
+  min-width: 40px;
+  height: 15px;
+}
+/*remove default checkbox*/
+.freeship__switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.freeship__slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--light_grey);
+  -webkit-transition: .4s;
+  transition: .4s;
+  border-radius: 999px;
+}
+
+.freeship__slider::after {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  top: 50%;
+  left: 20px;
+  -ms-transform: translateY(-50%);
+  transform: translatey(-50%);
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+    border-radius: 50%;
+    box-shadow: 0 0 3px 1px var(--light_grey);
+}
+
+.freeship__switch input:checked + .freeship__slider {
+  background-color: var(--gold_yellow);
+}
+
+.freeship__switch input:checked + .freeship__slider::after {
+  -webkit-transform: translateX(var(--freeship_x_translate));
+  -ms-transform: translate(var(--freeship_x_translate),-50%);
+  transform: translate(var(--freeship_x_translate),-50%);
+}
+.freeship__slider::before {
+  content: "No";
+  color: var(--controller_grey);
+  position: absolute;
+  width: 15px;
+  height: 20px;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translatey(-50%);
+  left: -25px;
+}
+.freeship__switch input:checked + .freeship__slider::before {
+  content: "Yes";
+  color: var(--gold_yellow)
+}

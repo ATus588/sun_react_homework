@@ -1,0 +1,26 @@
+:root {
+  --translusion_grey: rgba(128, 128, 128, 0.499);
+  --prod_category: rgb(75, 75, 75);
+  --controller_grey: rgb(159, 159, 159);
+  --gold_yellow: #e2a400;
+  --light_grey: rgb(65,66,71,.08);
+  --freeship_x_translate: -20px;
+}
+
+.flex__justify__end {
+  display: flex;
+  justify-content: end;
+}
+.flex__align__middle {
+    display: flex;
+    align-items: center;
+}
+.flex__justify__center {
+  display: flex;
+  justify-content: center;
+}
+.flex__column__align__center {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}

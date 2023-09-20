@@ -1,0 +1,231 @@
+{
+    "categories": [
+        {
+            "id": 1,
+            "name": "Computer & Tablet",
+            "quantity": 2344
+        },
+        {
+            "id": 2,
+            "name": "Appliance",
+            "quantity": 345
+        }
+    ],
+    "subCategories": [
+        {
+            "id": 1,
+            "categoryId": 1,
+            "name": "Laptops",
+            "quantity": 5
+        },
+        {
+            "id": 2,
+            "categoryId": 1,
+            "name": "Mouses",
+            "quantity": 23
+        },
+        {
+            "id": 3,
+            "categoryId": 1,
+            "name": "Monitor",
+            "quantity": 235
+        },
+        {
+            "id": 4,
+            "categoryId": 2,
+            "name": "Kitchen",
+            "quantity": 2134
+        },
+        {
+            "id": 5,
+            "categoryId": 2,
+            "name": "Fan",
+            "quantity": 69
+        }
+    ],
+    "ratings": [
+        {
+            "star": 1,
+            "count": 453
+        },
+        {
+            "star": 2,
+            "count": 4534
+        },
+        {
+            "star": 3,
+            "count": 23
+        },
+        {
+            "star": 4,
+            "count": 934
+        }
+    ],
+    "brands": [
+        {
+            "id": 1,
+            "name": "Dell"
+        },
+        {
+            "id": 2,
+            "name": "Microsoft"
+        },
+        {
+            "id": 3,
+            "name": "Điện cơ"
+        },
+        {
+            "id": 4,
+            "name": "Razer"
+        },
+        {
+            "id": 5,
+            "name": "No brand"
+        }
+    ],
+    "products": [
+        {
+            "id": 1,
+            "price": 43.99,
+            "name": "Dell laptop",
+            "categoryId": 1,
+            "des": "lorem5 asdjlf; adsf qwerqwe 213453245 rqwerqere",
+            "subCategoryId": 1,
+            "rating": 4,
+            "brandId": 1,
+            "freeShip": true
+        },
+        {
+            "id": 2,
+            "price": 12343.09,
+            "name": "Laptop with Microsoft",
+            "categoryId": 1,
+            "des": "lorem5 asdjlf; adsf qwerqwe 213453245 rqwerqere with Microsoft",
+            "subCategoryId": 1,
+            "rating": 3,
+            "brandId": 2,
+            "freeShip": true
+        },
+        {
+            "id": 3,
+            "price": 43.99,
+            "name": "Blue Dell laptop",
+            "categoryId": 1,
+            "des": "lorem5 asdjlf; adsf qwerqwe 213453245 rqwerqere",
+            "subCategoryId": 1,
+            "rating": 4,
+            "brandId": 1,
+            "freeShip": true
+        },
+        {
+            "id": 4,
+            "price": 0.99,
+            "name": "Dish holder",
+            "categoryId": 2,
+            "des": "lorem5 asdjlf; adsf qwerqwe 213453245 rqwerqere",
+            "subCategoryId": 4,
+            "rating": 2,
+            "brandId": 5,
+            "freeShip": false
+        },
+        {
+            "id": 5,
+            "price": 4673.99,
+            "name": "Dish holder type 2",
+            "categoryId": 2,
+            "des": "lorem5 asdjlf; adsf qwasdfgadsfasdfdsdv erqwe 213453245 rqwerqere",
+            "subCategoryId": 4,
+            "rating": 4,
+            "brandId": 5,
+            "freeShip": true
+        },
+        {
+            "id": 6,
+            "price": 4673.99,
+            "name": "Black fan",
+            "categoryId": 2,
+            "des": "lorem5 asdjlf; adsf qwasdfgadthe black fansfasdfdsdv erqwe 213453245 rqwerqere",
+            "subCategoryId": 5,
+            "rating": 4,
+            "brandId": 3,
+            "freeShip": false
+        },
+        {
+            "id": 7,
+            "price": 4673.99,
+            "name": "Red fan",
+            "categoryId": 2,
+            "des": "lorem5 asdjredlf; adsf qwasdfgadthe black fansfasdfdsdv erqwe 213453245 rqwerqere",
+            "subCategoryId": 5,
+            "rating": 4,
+            "brandId": 3,
+            "freeShip": true
+        },
+        {
+            "id": 8,
+            "price": 234.546,
+            "name": "Normal Razor mouse",
+            "categoryId": 1,
+            "des": "lorem5 asdjlf; adsf qwerqwe 213453245 rqwerqere",
+            "subCategoryId": 2,
+            "rating": 4,
+            "brandId": 4,
+            "freeShip": true
+        },
+        {
+            "id": 9,
+            "price": 234.546,
+            "name": "Normal Razor pad",
+            "categoryId": 1,
+            "des": "lorem5 asdjlf; adsfádfrrrrrrrrrrrrrrrrrrrr qwerqwe 213453245 rqwerqere",
+            "subCategoryId": 2,
+            "rating": 4,
+            "brandId": 4,
+            "freeShip": true
+        },
+        {
+            "id": 10,
+            "price": 234.546,
+            "name": "Good Razor mouse",
+            "categoryId": 1,
+            "des": "lorem5 attttttsdjlf; adsfádfrrrrrrrrrrrrrrrrrrrr qwerqwe 213453245 rqwerqere",
+            "subCategoryId": 2,
+            "rating": 4,
+            "brandId": 4,
+            "freeShip": true
+        },
+        {
+            "id": 11,
+            "price": 3234.546,
+            "name": "Dishwasher",
+            "categoryId": 2,
+            "des": "lorem5 asdjlf; adsfádfrrrrrrrrrrrrrrrrrrrr qwerqwe 213453245 rqwerqere",
+            "subCategoryId": 4,
+            "rating": 4,
+            "brandId": 3,
+            "freeShip": true
+        },
+        {
+            "id": 12,
+            "price": 2354.546,
+            "name": "Dell monitor 1",
+            "categoryId": 1,
+            "des": "lorem5 asdjlf; adsfádfrrrrrrrrrrrrrrrrrrrr qwerqwe 213453245 rqwerqere",
+            "subCategoryId": 3,
+            "rating": 1,
+            "brandId": 1,
+            "freeShip": true
+        },
+        {
+            "id": 13,
+            "price": 254.546,
+            "name": "Dell monitor 2",
+            "categoryId": 1,
+            "des": "lorem5 asdjlf; adsfádfrrrrrrrrrrrrrrrrrrrr qwerqwe 2134532adsfasd45 rqwerqere",
+            "subCategoryId": 3,
+            "rating": 4,
+            "brandId": 1,
+            "freeShip": true
+        }
+    ]
+}
